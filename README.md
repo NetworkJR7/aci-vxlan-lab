@@ -13,10 +13,14 @@ The lab demonstrates:
 
 ---
 
-## Topology
+## 🏗️ ACI Fabric Topology
 
 ![ACI Topology](diagrams/aci-topology.png)
 
+This topology represents a basic Cisco ACI fabric with one Spine, two Leafs and endpoints connected to each Leaf.  
+The APIC acts as the control plane managing policies and configuration.
+
+---
 
 ## 🧠 Architecture
 
