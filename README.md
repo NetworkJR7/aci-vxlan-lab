@@ -13,6 +13,11 @@ The lab demonstrates:
 
 ---
 
+## Topology
+
+![ACI Topology](diagrams/aci-topology.png)
+
+
 ## 🧠 Architecture
 
 * **Underlay Network:** 10.0.x.x (routing via Kali Linux)
