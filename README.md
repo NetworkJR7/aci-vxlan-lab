@@ -1,108 +1,126 @@
-# 🚀 ACI Lab Simulation with VXLAN and Python Automation
+# 🚀 ACI VXLAN Lab – Network Automation with Python
 
 ## 📌 Overview
 
-This project simulates a modern Data Center network using VXLAN overlay technology, inspired by Cisco ACI architecture.
+This project simulates a **modern Data Center network** inspired by **Cisco ACI architecture**, implementing VXLAN overlay networking and Python-based automation.
 
-The lab demonstrates:
-
-* Multi-tenant network segmentation using VXLAN (VNI 10 & 20)
-* Underlay and overlay networking
-* Microsegmentation using firewall policies (iptables)
-* Network automation using Python and SSH
-
----
-
-## 🏗️ ACI Fabric Topology
-
-![ACI Topology](diagrams/aci-topology.png)
-
-This topology represents a basic Cisco ACI fabric with one Spine, two Leafs and endpoints connected to each Leaf.  
-The APIC acts as the control plane managing policies and configuration.
+It demonstrates how traditional networking evolves into **policy-driven and automated infrastructures**, aligning with real-world **DevNet / NetDevOps environments**.
 
 ---
 
 ## 🧠 Architecture
 
-* **Underlay Network:** 10.0.x.x (routing via Kali Linux)
+* **Underlay Network:** 10.0.x.x (Linux-based routing)
 * **Overlay Network:** VXLAN (192.168.x.x)
 * **Control Node:** Kali Linux (routing, NAT, automation)
 * **Endpoints:**
 
-  * Web Server (10.0.1.10)
-  * DB Server (10.0.2.10)
+  * Web Server → 10.0.1.10
+  * DB Server → 10.0.2.10
+
+---
+
+## 🏗️ Topology
+
+> Simulated ACI Fabric with Spine-Leaf architecture
+
+* 1 Spine
+* 2 Leafs
+* Endpoints connected to Leafs
+* Centralized control logic (ACI-like model)
 
 ---
 
 ## 🔧 Technologies Used
 
-* Linux Networking (iproute2)
-* VXLAN
-* iptables (firewall & segmentation)
-* Python (automation)
+* Linux Networking (`iproute2`)
+* VXLAN (Overlay networking)
+* `iptables` (microsegmentation & firewall)
+* Python (automation & orchestration)
 * SSH (remote execution)
 
 ---
 
-## 🔐 Security & Segmentation
+## 🔐 Security & Microsegmentation
 
-Implemented microsegmentation similar to Cisco ACI contracts:
+Implemented **policy-based segmentation** inspired by Cisco ACI contracts:
 
-* Allowed traffic:
+### ✅ Allowed
 
-  * Web ↔ DB (specific ports)
-* Denied:
+* Web ↔ DB communication (restricted ports)
 
-  * Unauthorized communication between VNIs
+### ❌ Denied
+
+* Inter-VNI unauthorized traffic
+* Lateral movement between segments
 
 ---
 
 ## 🤖 Automation
 
-Python scripts were used to:
+Python scripts automate key infrastructure tasks:
 
-* Deploy VXLAN configurations
-* Apply firewall rules
-* Execute remote commands via SSH
+* VXLAN deployment
+* Firewall policy configuration
+* Remote command execution via SSH
+
+### Example
+
+```bash
+python scripts/deploy.py
+```
 
 ---
 
 ## 📂 Project Structure
 
-```bash
-aci_lab/
+```
+aci-vxlan-lab/
 ├── scripts/
+│   ├── deploy.py
 │   ├── web_setup.py
-│   ├── db_setup.py
-│   └── deploy.py
-├── diagrams/
+│   └── db_setup.py
 ├── configs/
+├── diagrams/
 └── README.md
 ```
 
 ---
 
-## 🧪 Key Learnings
+## 🧪 Key Skills Demonstrated
 
-* VXLAN overlay networking
-* Network troubleshooting (routing, NAT, DNS)
-* Policy-based segmentation
-* Infrastructure automation
+* VXLAN & Overlay Networking
+* Spine-Leaf Architecture Concepts
+* Network Troubleshooting (routing, NAT, segmentation)
+* Infrastructure Automation with Python
+* Security & Microsegmentation
 
 ---
 
 ## 💼 Real-World Relevance
 
-This lab simulates concepts used in:
+This project reflects real scenarios in:
 
-* Cisco ACI
+* Cisco ACI environments
 * Data Center Networking
-* Cloud Networking (AWS, Azure)
-* DevNet / NetDevOps environments
+* Cloud Networking (AWS / Azure VPC concepts)
+* DevNet / NetDevOps roles
 
 ---
 
-## 🚀 Author
+## 📈 Next Improvements (Roadmap)
 
-Jaime Rosero Mesa
-Senior Network Engineer transitioning into Cybersecurity & Network Automation
+* Add logging instead of print (Python logging module)
+* Implement CLI arguments (`argparse`)
+* Include API-based automation (REST / ACI simulation)
+* Dockerize lab components
+* Add monitoring (NetFlow / logs)
+
+---
+
+## 👨‍💻 Author
+
+**Jaime Rosero Mesa**
+Senior Network Engineer → Transitioning into Cybersecurity & Network Automation
+
+---
