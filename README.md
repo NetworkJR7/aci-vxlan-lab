@@ -75,7 +75,7 @@ aci_lab/
 │   ├── web_setup.py
 │   ├── db_setup.py
 │   └── deploy.py
-├── docs/
+├── diagrams/
 ├── configs/
 └── README.md
 ```
