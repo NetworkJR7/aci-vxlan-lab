@@ -85,27 +85,6 @@ This is host-level automation over SSH. It is not APIC API automation and does n
 
 > The diagram is conceptual. The `APIC1` label represents the idea of centralized control only; no Cisco APIC appliance or emulator is included. The implemented automation model is Python-based remote execution against Linux nodes.
 
-```text
-                         +---------+
-                         | Spine 1 |
-                         +----+----+
-                              |
-                   +----------+----------+
-                   |                     |
-              +----+----+           +----+----+
-              | Leaf 1  |           | Leaf 2  |
-              |  VTEP   |===========|  VTEP   |
-              +----+----+   VXLAN   +----+----+
-                   |                     |
-              +----+----+           +----+----+
-              |  Web    |           |   DB    |
-              |Endpoint |           |Endpoint |
-              +---------+           +---------+
-
-              Python control workflow over SSH
-```
-
-The solid path represents the underlay transport. The logical VXLAN tunnel connects the VTEPs across that transport. Endpoint policy is enforced with Linux firewall rules.
 
 ## Repository Structure
 
